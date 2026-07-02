@@ -1,0 +1,6 @@
+server/*.jar
+server/libraries/
+server/logs/
+server/crash-reports/
+server/cache/
+logs/

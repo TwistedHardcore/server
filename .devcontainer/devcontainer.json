@@ -1,0 +1,10 @@
+{
+  "name": "mc-server",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postStartCommand": "bash .devcontainer/on-start.sh",
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "8gb"
+  }
+}
