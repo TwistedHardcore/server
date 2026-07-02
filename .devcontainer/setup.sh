@@ -4,14 +4,13 @@
   echo "=== One-time setup starting ==="
  
   # --- Java 25 via SDKMAN (too new for apt/devcontainer features) ---
-  if [ ! -d "$HOME/.sdkman" ]; then
-    curl -s "https://get.sdkman.io" | bash
-  fi
-  set +u
-  source "$HOME/.sdkman/bin/sdkman-init.sh"
-  set -u
-  sdk install java 25-tem < /dev/null
-  sdk default java 25-tem
+set +u   # SDKMAN's installer breaks under nounset; SHELLOPTS leaks -u
+         # into it even through curl | bash
+if [ ! -d "$HOME/.sdkman" ]; then
+  curl -s "https://get.sdkman.io" | bash
+fi
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+set -u
  
   # --- tools the rest of the system needs ---
   sudo apt-get update -y
