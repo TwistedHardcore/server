@@ -1,6 +1,9 @@
 server/*.jar
+server/versions/
 server/libraries/
+server/.fabric/
 server/logs/
 server/crash-reports/
 server/cache/
+server/world/session.lock
 logs/
